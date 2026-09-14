@@ -9,9 +9,9 @@ from sqlalchemy import create_engine
 # RUTAS
 # =============================================
 base_dir   = os.path.dirname(os.path.abspath(__file__))
-data       = os.path.join(base_dir, "..", "data", "cybersecurity_attacks.csv")
-output_csv = os.path.join(base_dir, "..", "output", "cybersecurity_clean.csv")
-output_db  = os.path.join(base_dir, "..", "output", "cybersecurity_clean.db")
+data = os.path.join(base_dir, "..", "data", "raw", "cybersecurity_attacks.csv")
+output_csv = os.path.join(base_dir, "..", "data","processed", "cybersecurity_clean.csv")
+output_db  = os.path.join(base_dir, "..", "data","processed", "cybersecurity_clean.db")
 
 # =============================================
 # EXTRACCION
