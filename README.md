@@ -1,3 +1,42 @@
+# Cybersecurity Attack Analysis
+
+End-to-end data analysis project using Python and Power BI to explore cybersecurity attack patterns across a dataset of 40,000 records.
+
+---
+
+## Project Objective
+
+Analyze cybersecurity attack patterns (type, time, day of week, severity) to identify when and how attacks occur most frequently, supporting decisions on security monitoring priorities and resource allocation.
+
+This project simulates a real-world scenario for a security team needing to answer: *when are we most exposed, and which type of attack should we watch for first?*
+
+---
+
+## Project Structure
+
+```
+Proyecto_cyberseguridad/
+
+├── data/
+│   ├── raw/
+│   │   └── cybersecurity_attacks.csv      # Raw dataset
+│   ├── processed/
+│   │   ├── cybersecurity_clean.csv        # Cleaned dataset
+│   │   └── cybersecurity_clean.db         # SQLite database (clean)
+│   └── cybersecurity.db                   # SQLite database (raw load)
+│
+├── notebooks/
+│   ├── cargar_sqlite.ipynb                # Load raw data into SQLite
+│   └── eda.ipynb                          # Exploratory data analysis & cleaning
+│
+├── script/
+│   └── db_script.py                       # ETL pipeline script
+│
+├── dashboard/
+│   └── visualizacion.pbix                 # Power BI dashboard
+│
+└── README.md
+```
 
 ---
 
