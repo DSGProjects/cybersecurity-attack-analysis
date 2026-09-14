@@ -1,37 +1,7 @@
-# Cybersecurity Attack Analysis
-
-End-to-end data analysis project using Python and Power BI to explore cybersecurity attack patterns across a dataset of 40,000 records.
 
 ---
 
-## Project Structure
-
-```
-Proyecto_cyberseguridad/
-│
-├── data/
-│   └── cybersecurity_attacks.csv       # Raw dataset
-│
-├── notebooks/
-│   ├── cargar_sqlite.ipynb             # Load raw data into SQLite
-│   └── eda.ipynb                       # Exploratory data analysis & cleaning
-│
-├── script/
-│   └── db_script.py                    # ETL pipeline script
-│
-├── output/
-│   ├── cybersecurity_clean.csv         # Cleaned dataset
-│   └── cybersecurity_clean.db         # SQLite database
-│
-├── powerbi/
-│   └── visualizacion.pbix              # Power BI dashboard
-│
-└── README.md
-```
-
----
-
-##  Tools & Technologies
+## Tools & Technologies
 
 - **Python** → Data cleaning, transformation and EDA
 - **Pandas / NumPy** → Data manipulation
@@ -41,7 +11,7 @@ Proyecto_cyberseguridad/
 
 ---
 
-##  ETL Pipeline
+## ETL Pipeline
 
 ### 1. Extraction
 - Loaded raw CSV with 40,000 records and 25+ columns
@@ -61,10 +31,10 @@ Proyecto_cyberseguridad/
 
 ---
 
-##  Power BI Dashboard
+## Power BI Dashboard
 
 ### Page 1 - Overview
-![Overview](screenshots/Overview.png)
+![Overview](assets/Overview.png)
 - KPIs: % Blocked, % High Severity, Avg Anomaly Score, Total Attacks
 - Attack Type Distribution
 - Actions Taken by Attack Type
@@ -73,7 +43,7 @@ Proyecto_cyberseguridad/
 - Attacks by Protocol
 
 ### Page 2 - Temporal Analysis
-![Temporal Analysis](screenshots/Temporal%20Analysis.png)
+![Temporal Analysis](assets/Temporal%20Analysis.png)
 - Hourly Attack Patterns
 - Monthly Attacks by Type
 - Attacks by Time of Day and Severity
@@ -82,12 +52,19 @@ Proyecto_cyberseguridad/
 
 ---
 
-##  Key Findings
+## Key Findings
 
 - Attack types (DDoS, Malware, Intrusion) are evenly distributed (~33% each)
-- Peak attack hour is **1 PM**
+  → *Recommendation: no single attack type can be prioritized over the others; defense strategy should cover all three fronts equally.*
+
+- Peak attack hour is **1:00 PM**
+  → *Recommendation: reinforce active monitoring and automated alerts during the midday window.*
+
 - **Tuesday** registers the highest number of attacks
-- Attack volume remained stable from 2020 to mid-2023
+  → *Recommendation: investigate whether this correlates with deployments, system changes, or reduced security staffing that day, and adjust monitoring shifts accordingly.*
+
+- Attack volume remained stable from 2020 to mid-2023, with no anomalous spikes
+  → *Recommendation: use this stable behavior as a baseline; any future deviation should trigger a priority investigation alert.*
 
 ---
 
@@ -97,6 +74,8 @@ Proyecto_cyberseguridad/
 - Records: 40,000
 - Period: 2020 - 2023
 
+> Note: The original dataset did not include derived temporal variables or risk categorization. The `time_of_day`, `year_month`, and `risk_category` columns were engineered as part of the transformation process to enable temporal and severity analysis.
+
 ---
 
 ## Author
@@ -104,5 +83,3 @@ Proyecto_cyberseguridad/
 David Fernando Solano Garcia - Data Analyst & Industrial Engineer
 
 [LinkedIn](https://www.linkedin.com/in/david-fernando-solano-garcia-840230348)
-
-Última actualización de prueba.
